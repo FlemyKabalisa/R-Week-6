@@ -237,30 +237,150 @@ print(mean_col)
 rm(q)
 # 4 Refer to the Arsenal and Man U matches and combine if else and for loop statement
 
-if(matches[[1]][1]>matches[[1]][2]){
-  print("Man U wins")
-}else{
-  print("Man U lost")
-}
-
+results <- c()
+rm(p)
 p <- 1
 
 for (match in matches) {
-  if(matches[[p]][1]>matches[[p]][2]){
+  results[p] <- { if(matches[[p]][1]>matches[[p]][2]){
     print("Man U wins")
   }else{
     print("Man U lost")
-  }
+  }}
   p <- p+1
+  if (p==4){
+    break
+  }
 }
+print(results)
 
-rm(p)
 
 #Further questions....Building on the control structures, extend the examples and find out how the following works
 # break
 ?break
+results <- c()
+rm(p)
+p <- 1
+
+for (match in matches) {
+  results[p] <- { if(matches[[p]][1]>matches[[p]][2]){
+    print("Man U wins")
+  }else{
+    print("Man U lost")
+  }}
+  p <- p+1
+  if (p==4){
+    break
+  }
+}
+print(results)
+
 #next
-# while loop
+
+x2 <- c(1:12)
+
+for (i in x2){
+  if(i%%2 !=0){
+    next
+  }
+  print(i)
+}
+
+# while loop to get the continuous sum of the first 10 natural numbers
+
+number = 1
+sum= 0
+
+while(number <= 10) {
+  sum = sum + number
+  number = number +1
+}
+print(sum)
 
 
-#
+#--------------- Functions -----------------#
+
+
+#syntax
+
+#function(arguments){
+  #body #Computations on the arguments
+  #return
+#}
+
+
+my_first_function <- function(x){
+  cube<-x**3
+  return(cube)
+}
+
+my_first_function(5)
+
+my_first_function(1000)
+
+my_first_function(9)
+
+pi
+
+#Write a function that can compute the area of a circle
+
+my_function2 <- function(r){
+  area <- pi*r^2
+  return(area)
+}
+
+my_function2(3)
+
+#Write a function that can check if a given number is divisible by 5
+
+check <- function(x, div =5){
+  if (x%%div ==0){
+    result <- paste0(x, " is divisible by ", div)
+  }else{
+    result <- paste0(x, " is not divisible by ", div)
+  }
+  return(result)
+}
+
+check(11, div=5)
+
+check(120, div=5)
+
+check(130, div= 2) 
+#These defined functions are not restricted as long as the structure is not broken
+
+
+
+#Write the function that checks the divisibility of elements in a vector
+
+tests <- c(1:9)
+divi <- c()
+rm(t)
+t <- 1
+
+for (i in tests){
+  divi[t] <- check(i, div = 2)
+  t <- t+1
+}
+print(divi)
+
+#Other answer
+
+check_1 <- function(x, div = 5){
+  result <- c()
+  z <- 1
+  for (i in x) {
+    if(i%%div ==0){
+      result[z] <- paste0(i, " is divisible by ", div)
+    }else{
+      result[z] <- paste0(i, " is not divisible by ", div)
+    }
+    z <- z+1
+  }
+  return(result)
+}
+
+check_1(x = c(7,15, 16, 20), div = 2) #extend this to ensure that they are printed in an new line each
+
+#Write a function that returns the multiplication of three numbers every time we call it
+    ## How does this work with Vector multiplication
