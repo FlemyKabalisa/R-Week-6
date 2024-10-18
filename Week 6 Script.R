@@ -108,7 +108,7 @@ strsplit(testx2,"\\. (?=1-100)", perl = TRUE)
 
 # Arsenal and Man U - Goals Scored by each team respectively
 
-matches <- list (c(2,1), c(5,2), c(6,2))
+matches <- list (c(2,1), c(3,7), c(6,2))
 print(matches)
 
 #If statement to print out winner of a game
@@ -212,5 +212,55 @@ paste0(headers,"(", num_char, ")")
 
 # 3. Write a for loop to compute the mean of every column in mtcars dataset
 
+print(mtcars)
+View(mtcars)
+class(mtcars)
 
+mean(mtcars$mpg)
+
+colMeans(mtcars)
+
+mean_col <- c()
+cars <- mtcars
+View(cars)
+q <- 1
+mean(cars[, q])
+
+
+for (car in cars) {
+  mean_col[q] <- mean(cars[, q])
+  q <- q+1
+}
+print(mean_col)
+
+
+rm(q)
 # 4 Refer to the Arsenal and Man U matches and combine if else and for loop statement
+
+if(matches[[1]][1]>matches[[1]][2]){
+  print("Man U wins")
+}else{
+  print("Man U lost")
+}
+
+p <- 1
+
+for (match in matches) {
+  if(matches[[p]][1]>matches[[p]][2]){
+    print("Man U wins")
+  }else{
+    print("Man U lost")
+  }
+  p <- p+1
+}
+
+rm(p)
+
+#Further questions....Building on the control structures, extend the examples and find out how the following works
+# break
+?break
+#next
+# while loop
+
+
+#
