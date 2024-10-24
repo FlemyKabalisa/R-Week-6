@@ -9,6 +9,8 @@
 #}else{
 # statement_2
 #}
+Man_U <- 6
+Arsenal <- 5
 
 if(Man_U > Arsenal){
   print("Man U won")
@@ -380,7 +382,29 @@ check_1 <- function(x, div = 5){
   return(result)
 }
 
-check_1(x = c(7,15, 16, 20), div = 2) #extend this to ensure that they are printed in an new line each
+output1 <- check_1(x = c(7,15, 16, 20), div = 2) #extend this to ensure that they are printed in an new line each
 
-#Write a function that returns the multiplication of three numbers every time we call it
-    ## How does this work with Vector multiplication
+cat(output1, sep = '\n') # Answer to how to print on separate lines
+
+#5 Write a function that returns the multiplication of three numbers every time we call it
+    
+
+multi<- function(s){
+  product <- a*b*c
+  return(product)
+}
+a=2
+b=3
+c=4
+multi(1)
+
+     ## How does this work with Vector multiplication?
+
+multi2<- function(s){
+  product <- A*B*C
+  return(product)
+}
+A <- c(1,4,6,2)
+B <- c(2,9,5,3)
+C <- c(6,3,7,8)
+multi2(1)
